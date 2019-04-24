@@ -37,4 +37,16 @@ public class GameObjectPool : MonoBehaviour
         obj.SetActive(true);
         return obj;
     }
+
+    public GameObject Get(Vector3 position, Quaternion rotation, Transform parent)
+    {
+        if (pool.Count <= 0)
+        {
+            FillPool();
+        }
+        GameObject obj = pool.Dequeue();
+        obj.transform.SetPositionAndRotation(position, rotation);
+        obj.transform.parent = parent;
+        return obj;
+    }
 }
