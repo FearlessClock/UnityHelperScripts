@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FloatVariable", menuName = "Jelly fish jumper/FloatVariable", order = 0)]
+[CreateAssetMenu(fileName = "FloatVariable", menuName = "UnityHelperScripts/FloatVariable", order = 0)]
 public class FloatVariable : ScriptableObject 
 {
     public float value;

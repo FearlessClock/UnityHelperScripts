@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public enum eState {Moving, Diving}
 public class eStateEvent:UnityEvent<eState>{}
-[CreateAssetMenu(fileName = "StateMachineVariable", menuName = "Minijam23/StateMachineVariable", order = 0)]
+[CreateAssetMenu(fileName = "StateMachineVariable", menuName = "UnityHelperScripts/StateMachineVariable", order = 0)]
 public class StateMachineVariable : ScriptableObject {
     [SerializeField] private eState currentState;
     public eStateEvent OnStateChange;

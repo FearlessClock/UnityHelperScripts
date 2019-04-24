@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AxisVariable", menuName = "PlanetSlinger/AxisVariable", order = 0)]
+[CreateAssetMenu(fileName = "AxisVariable", menuName = "UnityHelperScripts/AxisVariable", order = 0)]
 public class AxisVariable : ScriptableObject {
     public string axisName;
 

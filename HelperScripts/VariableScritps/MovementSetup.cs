@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "MovementSetup", menuName = "PlanetSlinger/MovementSetup", order = 0)]
+[CreateAssetMenu(fileName = "MovementSetup", menuName = "UnityHelperScripts/MovementSetup", order = 0)]
 public class MovementSetup : ScriptableObject {
     public AxisVariable horizontal;
     public AxisVariable vertical;

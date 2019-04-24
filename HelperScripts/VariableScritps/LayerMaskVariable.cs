@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LayerMaskVariable", menuName = "Jelly fish jumper/LayerMaskVariable", order = 0)]
+[CreateAssetMenu(fileName = "LayerMaskVariable", menuName = "UnityHelperScripts/LayerMaskVariable", order = 0)]
 public class LayerMaskVariable : ScriptableObject {
     public LayerMask value;
 

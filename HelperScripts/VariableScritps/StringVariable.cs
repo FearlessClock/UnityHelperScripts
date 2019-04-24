@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "StringVariable", menuName = "Jelly fish jumper/StringVariable", order = 0)]
+[CreateAssetMenu(fileName = "StringVariable", menuName = "UnityHelperScripts/StringVariable", order = 0)]
 public class StringVariable : ScriptableObject {
     public string value;
 
