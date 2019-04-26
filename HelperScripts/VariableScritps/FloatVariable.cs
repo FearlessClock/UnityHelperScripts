@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloatVariable : ScriptableObject 
 {
     public float value;
-
+    public FloatEvent OnValueChanged;
     public static implicit operator float(FloatVariable reference)
     {
             return reference.value;
@@ -14,6 +14,7 @@ public class FloatVariable : ScriptableObject
     public void SetValue(float v)
     {
         this.value = v;
+        OnValueChanged?.Invoke(v);
     }
 
     public override string ToString(){

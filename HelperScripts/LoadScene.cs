@@ -14,26 +14,16 @@ public class LoadScene : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update() {
-        
-        if(Input.GetKeyUp(KeyCode.Escape)){
-            StartCoroutine("QuitGameWithFade");
-        }
-    }
-
     public void LoadSceneCallback(StringVariable name){
         StartCoroutine("LoadSceneWithFade", name);
     }
 
     private IEnumerator LoadSceneWithFade(StringVariable name){
         animator.SetTrigger("Load");
-        yield return new WaitForSeconds(fadeClip.length);
-        SceneManager.LoadSceneAsync(name, LoadSceneMode.Single );
-    }
-
-    private IEnumerator QuitGameWithFade(){
-        animator.SetTrigger("Load");
-        yield return new WaitForSeconds(fadeClip.length);
-        Application.Quit();
+        if(fadeClip != null)
+        {
+            yield return new WaitForSeconds(fadeClip.length);
+        }
+        SceneManager.LoadScene(name, LoadSceneMode.Single );
     }
 }
