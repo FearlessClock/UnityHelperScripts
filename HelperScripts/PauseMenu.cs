@@ -11,14 +11,24 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(){
         if(pausedGame == 1){
-            Time.timeScale = 1;
-            pausedGame.SetValue(0);
+            Resume();
             OnPauseMenuDeactivate?.Invoke();
         }
         else if(pausedGame == 0){
-            Time.timeScale = 0;
-            pausedGame.SetValue(1);
+            Pause();
             OnPauseMenuActivate?.Invoke();
         }
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        pausedGame.SetValue(0);
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        pausedGame.SetValue(1);
     }
 }
