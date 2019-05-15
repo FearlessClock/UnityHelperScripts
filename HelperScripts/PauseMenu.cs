@@ -5,16 +5,18 @@ using UnityEngine.Events;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private FloatVariable pausedGame;
+    [SerializeField] private GameStateVariable stateVariable;
     public UnityEvent OnPauseMenuActivate;
     public UnityEvent OnPauseMenuDeactivate;
 
     public void PauseGame(){
-        if(pausedGame == 1){
+        if (stateVariable == GameStateVariable.GameState.Pause)
+        {
             Resume();
             OnPauseMenuDeactivate?.Invoke();
         }
-        else if(pausedGame == 0){
+        else if (stateVariable == GameStateVariable.GameState.Playing)
+        {
             Pause();
             OnPauseMenuActivate?.Invoke();
         }
@@ -23,12 +25,12 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-        pausedGame.SetValue(0);
+        stateVariable.SetValue(GameStateVariable.GameState.Playing);
     }
 
     public void Pause()
     {
         Time.timeScale = 0;
-        pausedGame.SetValue(1);
+        stateVariable.SetValue(GameStateVariable.GameState.Pause);
     }
 }
