@@ -17,6 +17,12 @@ public class FloatVariable : ScriptableObject
         OnValueChanged?.Invoke(v);
     }
 
+    public void Add(float v)
+    {
+        this.value += v;
+        OnValueChanged?.Invoke(this.value);
+    }
+
     public override string ToString(){
         return value.ToString();
     }

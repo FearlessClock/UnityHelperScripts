@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameStateVariable stateVariable;
+    [SerializeField] private bool stopTime = true;
     public UnityEvent OnPauseMenuActivate;
     public UnityEvent OnPauseMenuDeactivate;
 
@@ -24,13 +25,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Time.timeScale = 1;
+        if (stopTime)
+        {
+            Time.timeScale = 1;
+        }
         stateVariable.SetValue(GameStateVariable.GameState.Playing);
     }
 
     public void Pause()
     {
-        Time.timeScale = 0;
+        if (stopTime)
+        {
+            Time.timeScale = 0;
+        }
         stateVariable.SetValue(GameStateVariable.GameState.Pause);
     }
 }
