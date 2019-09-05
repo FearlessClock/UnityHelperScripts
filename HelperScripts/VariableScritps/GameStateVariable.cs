@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "FloatVariable", menuName = "UnityHelperScripts/GameStateVariable", order = 0)]
 public class GameStateVariable : ScriptableObject
 {
-    public enum GameState { Playing, Pause, GameOver, Victory}
+    public enum GameState { MainMenu, Playing, Pause, GameOver, Victory }
     public GameState value;
     public UnityEvent OnValueChanged;
     public static implicit operator GameState(GameStateVariable reference)

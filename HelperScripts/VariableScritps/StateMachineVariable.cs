@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum eState {Moving, Diving}
-public class eStateEvent:UnityEvent<eState>{}
+public enum eSMState {Moving, Diving}
+public class eStateEvent:UnityEvent<eSMState>{}
 [CreateAssetMenu(fileName = "StateMachineVariable", menuName = "UnityHelperScripts/StateMachineVariable", order = 0)]
 public class StateMachineVariable : ScriptableObject {
-    [SerializeField] private eState currentState;
+    [SerializeField] private eSMState currentState;
     public eStateEvent OnStateChange;
     public eStateEvent OnStateExit;
 
-    public eState GetCurrentState(){
+    public eSMState GetCurrentState(){
         return currentState;
     }
 
-    public void SetStateTo(eState newState){
+    public void SetStateTo(eSMState newState){
         OnStateExit?.Invoke(currentState);
         currentState = newState;
         OnStateChange?.Invoke(currentState);
     }
 
     
-    public static implicit operator eState(StateMachineVariable reference)
+    public static implicit operator eSMState(StateMachineVariable reference)
     {
             return reference.currentState;
     }
