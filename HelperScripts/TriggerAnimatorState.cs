@@ -5,8 +5,8 @@ using UnityEngine;
  [RequireComponent(typeof(Animator))]
 public class TriggerAnimatorState : MonoBehaviour
 {
-    private Animator animator;
-    [SerializeField] private string triggerName;
+    private Animator animator = null;
+    [SerializeField] private string triggerName = "";
     private void OnEnable() {
         animator = GetComponent<Animator>();
     }

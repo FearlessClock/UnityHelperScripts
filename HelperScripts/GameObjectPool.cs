@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameObjectPool : MonoBehaviour
 {
-    Queue<GameObject> pool;
-    [SerializeField] private GameObject[] prefabs;
-    [SerializeField] private int poolSize;
+    private Queue<GameObject> pool = new Queue<GameObject>();
+    [SerializeField] private GameObject[] prefabs = new GameObject[0];
+    [SerializeField] private int poolSize = 0;
 
     public void ReturnObject(GameObject gameObject)
     {

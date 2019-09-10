@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartParticles : MonoBehaviour
+public class ParticleFactory : MonoBehaviour
 {
-    [SerializeField] private GameObject bubbles;
-    [SerializeField] private Transform spawnPosition;
+    [SerializeField] private GameObject particleSystemToSpawn = null;
 
-    public void StartParticlesSystem(){
-        Instantiate<GameObject>(bubbles, spawnPosition.position, Quaternion.identity);
+    public void InstantiateAt(Transform trans){
+        Instantiate<GameObject>(particleSystemToSpawn, trans.position, Quaternion.identity);
     }
 }

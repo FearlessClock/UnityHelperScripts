@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class AfterTimeEvent : MonoBehaviour
 {
-    [SerializeField] private float time;
+    [SerializeField] private float time = 0;
     public UnityEvent OnTimerDone;
 
     private void Awake()

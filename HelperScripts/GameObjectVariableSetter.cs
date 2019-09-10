@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameObjectVariableSetter : MonoBehaviour
 {
-    [SerializeField] private GameObjectVariable gameobjectVariable;
+    [SerializeField] private GameObjectVariable gameobjectVariable = null;
 
     private void Awake()
     {

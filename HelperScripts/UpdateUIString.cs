@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class UpdateUIString : MonoBehaviour
 {
-    [SerializeField] private string prefix;
+    [SerializeField] private string prefix = "";
 
-    [SerializeField] private StringVariable valueVar;
-    [SerializeField] private string suffix;
-    private TextMeshProUGUI textToUpdate;
+    [SerializeField] private StringVariable valueVar = null;
+    [SerializeField] private string suffix = "";
+    private TextMeshProUGUI textToUpdate = null;
 
     private void OnEnable()
     {

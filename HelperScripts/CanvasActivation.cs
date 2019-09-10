@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class CanvasActivation : MonoBehaviour
 {
-    private CanvasGroup canvasGroup;
+    private CanvasGroup canvasGroup = null;
     private void OnEnable() {
         canvasGroup = GetComponent<CanvasGroup>();
     }

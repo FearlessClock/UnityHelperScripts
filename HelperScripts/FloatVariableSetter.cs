@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FloatVariableSetter : MonoBehaviour
 {
-    [SerializeField] private FloatVariable variable;
-    [SerializeField] private float value;
+    [SerializeField] private FloatVariable variable = null;
+    [SerializeField] private float value = 0;
     private void Awake()
     {
         ResetVariable();

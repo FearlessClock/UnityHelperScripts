@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameStateVariable stateVariable;
+    [SerializeField] private GameStateVariable stateVariable = null;
     [SerializeField] private bool stopTime = true;
     public UnityEvent OnPauseMenuActivate;
     public UnityEvent OnPauseMenuDeactivate;
